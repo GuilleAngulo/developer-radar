@@ -1,7 +1,0 @@
-{
-    "username": "guillermo",
-    "password": "guillermo",
-    "cluster": "mongodbcluster-hsdtj.mongodb.net",
-    "port": 27017,
-    "database": "devradar"
-}
