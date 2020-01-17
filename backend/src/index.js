@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes');
 
-const { username, password, cluster, database } = require('../src/util/database');
+const { username, password, cluster, database } = require('../src/config/database.json');
 
 const app = express();
 
@@ -11,9 +12,6 @@ mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${database}?r
 });
 
 app.use(express.json());
-
-app.get('/', (req, res) => {
-    return res.send('Hello World')
-});
+app.use(routes);
 
 app.listen(3333);
