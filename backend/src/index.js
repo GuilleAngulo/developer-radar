@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 const { username, password, cluster, database } = require('../src/config/database.json');
@@ -11,6 +12,7 @@ mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${database}?r
     useUnifiedTopology: true,
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
