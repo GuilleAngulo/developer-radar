@@ -1,5 +1,6 @@
 const axios = require('axios');
 const Dev = require('../models/Dev');
+const { findConnections, sendMessage } = require('../websocket');
 
 const parseStringAsArray = require('../utils/parseStringAsArray');
 
@@ -76,6 +77,15 @@ module.exports = {
                 techs: techsArray,
                 location,
             });
+
+            const sendSocketMessageTo = findConnection(
+                { latitude, longitude },
+                techsArray,
+            )
+
+            console.log(sendSocketMessageTo);
+            sendMessage(sendSocketMessageTo, 'new-dev', dev);
+
         }
     
         return res.json(dev);
