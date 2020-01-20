@@ -3,7 +3,7 @@ import React from 'react';
 import './styles.css';
 
 function DevItem({ dev }) {
-    return(
+    return (
         <li className="dev-item">
             <header>
             <img src={dev.avatar_url} alt={dev.name} />

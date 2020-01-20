@@ -10,6 +10,7 @@ const app = express();
 mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}/${database}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
 });
 
 app.use(cors());

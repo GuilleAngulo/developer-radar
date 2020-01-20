@@ -1,4 +1,4 @@
-const mongoose = require('moongose');
+const mongoose = require('mongoose');
 
 const PointSchema = new mongoose.Schema({
     type: {
